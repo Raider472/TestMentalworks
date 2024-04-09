@@ -1,0 +1,11 @@
+http://127.0.0.1 http://localhost {
+
+    root * /var/www/html/public
+    # Encode responses in zstd or gzip, depending on the
+    # availability indicated by the browser.
+    encode zstd gzip
+
+    # Configures multiple PHP-related settings
+    php_fastcgi php:9000
+    file_server
+}

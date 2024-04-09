@@ -1,0 +1,30 @@
+services:
+  php:
+    container_name: php
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./app:/var/www/html
+      - ./php.ini:/usr/local/etc/php/php.ini
+      - ./msmtprc:/etc/msmtprc
+
+  caddy:
+    container_name: caddy
+    image: caddy:2.7
+    restart: unless-stopped
+    ports: 
+      - 80:80
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy/caddy_data:/data
+      - ./caddy/caddy_config:/config
+      - ./app/public:/var/www/html/public
+ 
+  mailcatcher:
+    container_name: mailcatcher
+    restart: unless-stopped
+    image: sj26/mailcatcher:latest
+    ports:
+      - "1080:1080"
