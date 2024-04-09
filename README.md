@@ -13,4 +13,5 @@
     - grâce à la commande ci-dessus, composer sera installé dans notre conteneur php.
 
 ## Accéder au projet
-- Une fois les conteneurs docker lancé, on peut accéder au site à partir de ce lien: `http://localhost/` ou `http://127.0.0.1/`
+- Une fois les conteneurs docker lancé, on peut accéder au site à partir de ce lien: http://localhost/ ou http://127.0.0.1/
+- Pour accéder au mailcatcher: http://localhost:1080/

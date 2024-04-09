@@ -41,4 +41,8 @@ class VerificationController {
     private function checkboxFilled($checkbox): bool {
         return $checkbox != null;
     }
+
+    public function isItNull($value): bool {
+        return $value === null;
+    }
 }

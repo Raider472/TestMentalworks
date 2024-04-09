@@ -8,5 +8,6 @@
 <body>
     <a href="/registration">Register</a>
     <a href="/dashboard">Dashboard</a>
+    <a href="/sendNewsletter">Send Newsletter</a>
 </body>
 </html>

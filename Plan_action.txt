@@ -11,7 +11,7 @@ priorités:
 étapes:
     X 1
     X 2
-    - 3
+    presque finis 3
     - 4
 
 modèles:
@@ -21,7 +21,7 @@ modèles:
 vues:
     X newsletterRegistration.view -> prendre l'index html et le convertir pour php
     X dashboard.view -> afficher les newsletter et les personnes inscrites à ces newsletter
-    sendNewsletter.view -> formulaires avec checkbox de toutes les newsletter "pending"
+    X sendNewsletter.view -> formulaires avec checkbox de toutes les newsletter "pending"
     unsubscribe.view -> message confirmant la désinscription
     X error404.view -> si l'utilisateur vas sur un chemin non-existant 
     X home.view -> page d'accueil possiblement
@@ -30,7 +30,7 @@ Controllers
     X BaseController -> classe avec héritage, permet de render et de faire les requêtes Curl
     X NewsletterRegistrationController -> affiche la page "newsletterRegistration.view" et vérification du formulaire
     X DashoboardController ->  la page "dashboard.view" et affiche tous les newsletter pending
-    SendNewsletterController
+    X SendNewsletterController
     UnsubscribeController
     X ErrorController
     X HomeController

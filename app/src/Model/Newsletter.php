@@ -18,4 +18,17 @@ class Newsletter {
         $this->status = $status;
         $this->subscribedUsers = $users;
     }
+
+    public function transformIntoArray(): array {
+        //gather all the data inside this class as a single array, it will be useful for the Curl POST/PUT requests
+        return array(
+            "id" => $this->id,
+            "title" => $this->title,
+            "content" => $this->content,
+            "interests" => $this->interests,
+            "status" => $this->status,
+            "interests" => $this->interests,
+            "subscribedUsers" => $this->subscribedUsers
+        );
+    }
 }
