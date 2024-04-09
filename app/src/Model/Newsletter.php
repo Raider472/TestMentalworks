@@ -8,12 +8,14 @@ class Newsletter {
     public string $content;
     public array $interests;
     public string $status;
+    public array $subscribedUsers;
 
-    public function __construct(string $id, string $title, string $content, array $interests, string $status) {
+    public function __construct(string $id, string $title, string $content, array $interests, string $status, array $users) {
         $this->id = $id;
         $this->title = $title;
         $this->content = $content;
         $this->interests = $interests;
         $this->status = $status;
+        $this->subscribedUsers = $users;
     }
 }

@@ -9,7 +9,7 @@ class BaseController {
     private string $urlNewsletter = "http://51.91.108.32/newsletters";
 
     protected function render(string $fileName, array $data = []) {
-        //render a view page with the name of the file and an array of data if not empty
+        //render a view page with the name of the file and an array of datas if not empty
         if(count($data) != 0) {
             extract($data);
         }
@@ -37,7 +37,6 @@ class BaseController {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch);
         curl_close($ch); 
-
         //transform the json into an normal array
         return json_decode($result, true);
     }
