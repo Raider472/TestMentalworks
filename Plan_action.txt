@@ -1,0 +1,27 @@
+priorités:
+    - update la db
+    - créer les models pour recevoir les données
+    - créer le controller principale pour render et les requêtes Curl
+    - créer les squelletes des vues
+    - créer les controllers pour la logique 
+
+modèles:
+    - Utilisateur -> même champs que la db
+    - Newsletter -> même champs que la db + statut
+
+vues:
+    newsletterRegistration.view -> prendre l'index html et le convertir pour php
+    dashboard.view -> afficher les newsletter et les personnes inscrittes à ces newsletter
+    sendNewsletter.view -> formulaires avec checkbox de toutes les newsletter "pending"
+    unsubscribe.view -> message confirmant la désinscription
+    error404.view -> si l'utilisateur vas sur un chemin non existant 
+    home.view -> page d'acceuil possiblement
+
+Controllers
+    BaseController -> classe avec héritage, permet de render et de faire les requêtes Curl
+    NewsletterRegistrationController -> affiche la page "newsletterRegistration.view" et vérification du formulaire
+    DashoboardController ->  la page "dashboard.view" et affiche tous les newsletter pending
+    SendNewsletterController
+    unsubscribeController
+    errorController
+    homeController
