@@ -24,7 +24,7 @@
     <h1 class="text-3xl font-bold">Subscribe to your newsletter</h1>
     <p class="text-gray-500 dark:text-gray-400">Enter your information to get in touch</p>
   </div>
-  <form class="space-y-4">
+  <form method="post" class="space-y-4">
     <div class="grid grid-cols-2 gap-4">
       <div class="space-y-2">
         <label
@@ -36,8 +36,10 @@
         <input
           class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
           id="first-name"
+          name="input_firstName"
           placeholder="Enter your first name"
           required=""
+          value="<?=$values["input_firstName"]?>"
         />
       </div>
       <div class="space-y-2">
@@ -50,8 +52,10 @@
         <input
           class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
           id="last-name"
+          name="input_lastName"
           placeholder="Enter your last name"
           required=""
+          value="<?=$values["input_lastName"]?>"
         />
       </div>
     </div>
@@ -65,9 +69,11 @@
       <input
         class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         id="email"
+        name="input_email"
         placeholder="Enter your email"
         required=""
         type="email"
+        value="<?=$values["input_email"]?>"
       />
     </div>
     <div class="space-y-2">
@@ -80,9 +86,14 @@
       <input
         class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         id="profession"
+        name="input_profession"
         placeholder="Enter your profession"
         required=""
+        value="<?=$values["input_profession"]?>"
       />
+    </div>
+    <div>
+      <label class="text-red-600"><?= $errors['textInput'] ?></label>
     </div>
     <div class="space-y-2">
       <span class="block text-sm font-medium text-gray-900 dark:text-gray-100">Interests</span>
@@ -90,6 +101,7 @@
         <div class="flex items-center space-x-2">
           <input
             type="checkbox"
+            name="checkbox_interests['machine_learning']"
             value="Machine Learning"
             class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
             id="machine-learning"
@@ -105,6 +117,7 @@
           <input
             type="checkbox"
             role="checkbox"
+            name="checkbox_interests['product_design']"
             value="Product Design"
             class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
             id="product-design"
@@ -120,6 +133,7 @@
           <input
             type="checkbox"
             role="checkbox"
+            name="checkbox_interests['web_development']"
             value="Web Development"
             class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
             id="web-development"
@@ -134,6 +148,7 @@
         <div class="flex items-center space-x-2">
           <input
             type="checkbox"
+            name="checkbox_interests['crypto']"
             value="Crypto"
             class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
             id="crypto"
@@ -144,10 +159,14 @@
         </div>
       </div>
     </div>
+    <div>
+      <label class="text-red-600"><?= $errors['interestsCheckbox'] ?></label>
+    </div>
     <div class="space-y-2 !mt-8">
       <div class="flex items-center space-x-2">
         <input
           type="checkbox"
+          name="checkbox_policy['policy']"
           value="policy"
           class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
           id="policy"
@@ -159,8 +178,12 @@
         </label>
       </div>
     </div>
+    <div>
+      <label class="text-red-600"><?= $errors['policyCheckbox'] ?></label>
+    </div>
     <button
       class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+      name="submit"
       type="submit"
     >
       Submit

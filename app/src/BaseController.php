@@ -42,7 +42,7 @@ class BaseController {
         return json_decode($result, true);
     }
 
-    protected function curlSendRegistration(string $operation, User $data) {
+    protected function curlSendRegistration(User $data, string $operation = "POST") {
         //convert the data as an array and the convert it as a json
         $data = $data->transformIntoArray();
         $jsonData = json_encode($data);
@@ -58,9 +58,14 @@ class BaseController {
         }
         curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        //for debuging purpose
-        $result = curl_exec($ch);
+        curl_exec($ch);
         //close curl once the request is completed
         curl_close($ch);
+    }
+
+    //automatically get the next available Register id for the post method
+    protected function curlIncrementIdRegister(): string {
+        $list = $this->curlGetEveryRegistration();
+        return strval(count($list) + 1);
     }
 }

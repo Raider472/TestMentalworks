@@ -6,15 +6,17 @@ class User {
     public string $id;
     public string $firstName;
     public string $lastName;
+    public string $email;
     public string $profession;
     public array $interests;
     public bool $register;
     public string $registerAt;
 
-    public function __construct(string $id, string $firstName, string $lastName, string $profession, array $interests, bool $register, string $registerAt) {
+    public function __construct(string $id, string $firstName, string $lastName, string $email, string $profession, array $interests, bool $register, string $registerAt) {
         $this->id = $id;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
+        $this->email = $email;
         $this->profession = $profession;
         $this->interests = $interests;
         $this->register = $register;
@@ -27,6 +29,7 @@ class User {
             "id" => $this->id,
             "firstName" => $this->firstName,
             "lastName" => $this->lastName,
+            "email" => $this->email,
             "profession" => $this->profession,
             "interests" => $this->interests,
             "register" => $this->register,

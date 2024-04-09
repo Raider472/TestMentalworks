@@ -3,9 +3,15 @@ priorités:
     X créer les models pour recevoir les données
     X créer le controller principale pour render et les requêtes Curl
     - créer les squeletes des vues
-    - créer les controllers pour la logique 
+    - créer les controllers pour la logique + le routing
     - compléter la documentation
     - styliser les pages vues
+
+étapes:
+    X 1
+    - 2
+    - 3
+    - 4
 
 modèles:
     - Utilisateur -> même champs que la db
@@ -24,6 +30,6 @@ Controllers
     NewsletterRegistrationController -> affiche la page "newsletterRegistration.view" et vérification du formulaire
     DashoboardController ->  la page "dashboard.view" et affiche tous les newsletter pending
     SendNewsletterController
-    unsubscribeController
-    errorController
-    homeController
+    UnsubscribeController
+    ErrorController
+    HomeController
