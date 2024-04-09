@@ -1,7 +1,7 @@
 priorités:
     X update la db
     X créer les models pour recevoir les données
-    - créer le controller principale pour render et les requêtes Curl
+    X créer le controller principale pour render et les requêtes Curl
     - créer les squeletes des vues
     - créer les controllers pour la logique 
     - compléter la documentation
