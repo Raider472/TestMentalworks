@@ -1,9 +1,11 @@
 priorités:
-    - update la db
+    X update la db
     - créer les models pour recevoir les données
     - créer le controller principale pour render et les requêtes Curl
     - créer les squelletes des vues
     - créer les controllers pour la logique 
+    - completer la documentation
+    - styliser les pages vues
 
 modèles:
     - Utilisateur -> même champs que la db

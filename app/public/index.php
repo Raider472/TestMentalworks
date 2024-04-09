@@ -1,2 +1,6 @@
 <?php
-phpinfo();
+require '../vendor/autoload.php';
+
+session_start();
+
+echo("hello world");
